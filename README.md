@@ -1,6 +1,31 @@
-# AngularSonarcloudScan
+# Angular Application with SonarCloud Integration
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2. It is integrated with SonarCloud for continuous code quality and security analysis. Every push or pull request triggers a GitHub workflow that runs tests, checks code quality, and reports any bugs, code smells, vulnerabilities, and technical debt using SonarCloud.
+
+## Prerequisites
+
+Before running the workflow, ensure you have the following:
+
+- A [SonarCloud](https://sonarcloud.io) account.
+- The project key and organization key from your SonarCloud project.
+- A **SonarCloud Token** added to your GitHub repository secrets under `SONAR_TOKEN`.
+
+## SonarCloud Setup
+
+1. **SonarCloud Project**: Create a project on [SonarCloud](https://sonarcloud.io/projects/create) linked to this GitHub repository.
+2. **SonarCloud Token**: Generate a token from the SonarCloud project and add it as a GitHub secret:
+
+   - Go to your GitHub repository.
+   - Navigate to `Settings > Secrets > Actions`.
+   - Create a new secret called `SONAR_TOKEN` and paste the token from SonarCloud.
+
+## Workflow Configuration
+
+The repository is set up with a GitHub workflow (`build.yml`) located in `.github/workflows/`. This workflow is triggered on every push or pull request to the `master` branch.
+
+## Project Configuration
+
+The SonarCloud configuration for this project is stored in the `sonar-project.properties` file located at the root of the project:
 
 ## Development server
 
